@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            body{
+                text-align: center;
+                margin-top: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <input type="number" id="first"/>
+        <select name="" id="operand">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">x</option>
+            <option value="/">/</option>
+        </select>
+        <input type="number" id="second"/><br><br>
+        <button onclick=calc()>Calculate</button><br><br>
+        <input type="number" id="result" value="" readonly/>
+    </body>
+    <script>
+        function calc(){
+        var op1=document.getElementById('first').value;
+        var op2=document.getElementById('second').value;
+        var opnd=document.getElementById('operand').value;
+        if(opnd == '+'){
+            result = parseInt(op1) + parseInt(op2);
+        }
+        if(opnd == '-'){
+            result = parseInt(op1) - parseInt(op2);
+        }
+        if(opnd == '*'){
+            result = parseInt(op1) * parseInt(op2);
+        }
+        if(opnd == '/'){
+            result = parseInt(op1) / parseInt(op2);
+        }
+        document.getElementById('result').value = result;
+        
+    }
+    </script>
+</html>
