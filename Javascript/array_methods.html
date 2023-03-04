@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- <link href="css/style.css" rel="stylesheet"> -->
+        
+    </head>
+    <body style="font-size:30px">
+        <div id="content">
+        </div>
+        <button onclick=popitem()>POP</button>
+        <button onclick=pushitem()>PUSH</button>
+        <button onclick=sliceitem()>SLICE</button>
+        <button onclick=reverseitem()>REVERSE</button>
+        <button onclick=shiftitem()>SHIFT</button>
+    </body>
+    <script type="text/javascript">
+        var fruits = ["apple","mango","blueberry","cherry","orange"]
+        var vegetables = ["ginger","tomato","brinjal"];
+        var shop = fruits.concat(vegetables);
+        // document.write(fruits.valueOf());
+        // document.write(Array.isArray(fruits));
+        // document.write(shop.concat(vegetables));
+        // document.write(shop.indexOf("ginger"));
+        // document.write(shop.join("--!--"));
+        document.getElementById('content').innerHTML = fruits;
+        
+        function popitem(){
+            var x = fruits.pop();
+            console.log(x+" popped");
+            document.getElementById('content').innerHTML = fruits;
+        }
+        function pushitem(){
+            var temp = prompt("Enter a fruit","");
+            fruits.push(temp);
+            console.log(temp+" pushed");
+            document.getElementById('content').innerHTML = fruits;
+        }
+        function sliceitem(){
+            var x = fruits.slice(1,4);
+            document.getElementById('content').innerHTML = x;
+        }
+        function reverseitem(){
+            var x = fruits.reverse();
+            document.getElementById('content').innerHTML = x;
+        }
+        function shiftitem(){
+            var x = fruits.shift();
+            document.getElementById('content').innerHTML = x;
+        }
+    </script>
+</html>

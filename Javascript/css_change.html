@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <h1 id="main" onmouseover=modify() onmouseleave="unmodify()">
+            MidJourney
+        </h1>
+    </body>
+    <script>
+        function modify(){
+            document.getElementById("main").style.fontSize = "50px";
+            document.getElementById("main").style.color = "green";
+
+        }
+        function unmodify(){
+            document.getElementById("main").style.fontSize = "";
+            document.getElementById("main").style.color = "";
+
+        }
+
+    </script>
+</html>

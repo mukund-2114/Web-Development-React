@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <button onclick=openWindow()>Open a New Window </button>
+        <button onclick=closeWindow()>Close the Window </button>
+    </body>
+    <script>
+        function openWindow(){
+            var on = window.open("https://www.youtube.com","width=500px","height=500px");
+        }
+        function closeWindow(){
+            on.close();
+        }
+    </script>
+</html>
