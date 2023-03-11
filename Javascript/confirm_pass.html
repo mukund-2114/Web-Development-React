@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="form">
+            Name:
+            <input type="text" id="name" ><br>
+            Password:
+            <input type="password" id="password" ><br>
+            Confirm Password:
+            <input type="password" id="confirm_password" onkeypress=check(this)>
+            <span id="error"></span><br>
+            <button>Submit</button>
+        </div>
+    </body>
+    <script>
+        var password = document.getElementById("password").value;
+        function check(element) {
+            
+            if(element.value.length > 0){
+                if(element.value != password){
+                    document.getElementById("error").innerText ="Password does not match";
+                }
+                else{
+                    document.getElementById("error").innerText = "matched";
+                }
+            }
+            else{
+                document.getElementById("error").innerText = "";
+            }
+        }
+    </script>
+</html>

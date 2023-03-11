@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        Enter number:<br>
+         <input type="text" onkeyup=validate(this)><br>
+         <div id="error"></div>
+
+    </body>
+    <script>
+        function validate(x){
+            document.getElementById('error').style.color = "red";
+            var num = x.value;
+            if(isNaN(num)){
+            
+                document.getElementById('error').innerText = "Only numbers allowed";
+            }       
+            else{
+                document.getElementById('error').innerText = "";
+                if(num.length>10){
+                    document.getElementById('error').innerText = "Maximum 10 digits only";
+                }
+            }
+        }
+    </script>
+</html>

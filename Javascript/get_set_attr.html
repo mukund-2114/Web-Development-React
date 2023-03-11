@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            .red{
+                color:red;
+            }
+            .blue{
+                color:blue;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 id="test" class="red">
+            Welcome to MidJourney
+        </h1>
+        <button onclick=test()>Click</button>
+    </body>
+    <script>
+        function test() {
+      
+        var data = document.getElementById('test');
+        var temp = data.getAttribute("class");
+        if (temp === "red") {
+            data.setAttribute("class", "blue");
+        }
+        else{
+            data.setAttribute("class", "red");
+        }
+        
+        }
+    </script>
+</html>

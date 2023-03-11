@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <label for="name">Username:</label>
+        <input type="text" id="username" name="username" placeholder="Username"><br><br>
+        <label for="password">Password:</label>
+        <input type="text" id="password" placeholder="Password">
+        <i class="fa fa-eye" aria-hidden="true" id="icon" onclick=change()></i>
+        <br>
+        <button>Submit</button>
+    
+    </body>
+    <script>
+        function change(){
+            var data = document.getElementById('password');
+            var status = data.getAttribute('type');
+            if(status === "text"){
+                data.setAttribute('type', 'password');
+            }
+            else{
+                data.setAttribute('type', 'text');
+            }
+        }
+    </script>
+</html>
