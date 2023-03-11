@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+    
+    </body>
+    <script>
+        const myPromise = new Promise((resolved,rejected) =>{
+            const a = 2 , b = 2;
+            const c = a + b;
+            if(c===4){
+                resolved(`Yes ${a} + ${b} = ${c}`);
+            }
+            else{
+                rejected(`No ${a}   + ${b} != ${c}`);
+            }
+        });
+        myPromise.then((m)=>{
+            console.log(m);
+        }).catch((err)=>{
+            console.log(err);
+        });
+    </script>
+</html>
