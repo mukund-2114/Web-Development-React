@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Zomato</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&display=swap');
+        body{
+            font-family: 'Nunito Sans', 'Helvetica', 'sans-serif';
+            font-size: 1.2em;
+            
+        }
+        .top-heading{
+            height: 550px;
+            background-image: url("https://b.zmtcdn.com/web_assets/81f3ff974d82520780078ba1cfbd453a1583259680.png");
+            background-size: cover;
+            
+        
+        }
+        .logo{
+            height:15%;
+            width:15%;
+            text-align: center;
+        }
+        .card{
+            transition: 0.2s ease-in;
+        }
+        .carder .card:hover{
+            transform: scale(1.05);
+        }
+        .card-image{
+            position: relative;
+            width: 270px;
+            height: 270px;
+        }
+        .card-image img{
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+        .card-overlay{
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            font-size: 1em;
+            color: white;
+        }
+        .location p{
+            font-size: 0.8em;
+        }
+        .card:hover{
+          cursor: pointer;
+        }
+        small{
+          display: block;
+          color: rgb(105, 105, 105);
+          font-size: 0.8em;
+          line-height: 1.4em;
+        }
+        b{
+          letter-spacing: 0.1em;
+          font-size: medium;
+        }
+        .roundcss{
+          border-top-right-radius: 5%;
+          border-top-left-radius: 5%;
+        }
+
+    </style>
+</head>
+  <body>
+    <!-- Header section -->
+    <div class="container-fluid top-heading">
+        
+            <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-transparent mt-lg-1 text-white">
+                <a class="navbar-brand" href="#"><i class="fa-solid fa-download"></i>Get the App</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                  <ul class="navbar-nav ml-auto">
+                    <li class="nav-item mr-lg-3">
+                      <a class="nav-link" href="#">Investor Relations</a>
+                    </li>
+                    <li class="nav-item mr-lg-3">
+                      <a class="nav-link" href="#">Add Restaurant</a>
+                    </li>
+                    <li class="nav-item mr-lg-3">
+                      <a class="nav-link" href="#">Log in</a>
+                    </li>
+                    <li class="nav-item mr-lg-3">
+                      <a class="nav-link" href="#">Sign Up</a>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+            </div>
+        <div class="container text-center mt-5">
+        <img src="https://b.zmtcdn.com/web_assets/8313a97515fcb0447d2d77c276532a511583262271.png" alt="" width="25%" height="25%" class="img-fluid mt-5">
+        <p class="mt-4 text-white" style="font-size: 2em;">Discover the best food & drinks in Ahmedabad</p>
+        <div class="search mt-4 text-center mr-auto ml-auto" style="width: 70%;">
+            <div class="input-group p-2 rounded">
+                <div class="input-group-prepend">
+                  <span class="input-group-text border-0"><i class="fa fa-search"></i></span>
+                </div>
+                <input type="text" class="form-control border-0 p-4" placeholder="Search for restaurants, cuisine or a dish">
+              </div>
+              
+        </div>
+        </div>
+    </div>
+    
+    <!-- header end -->
+
+    <!-- main section -->
+    <div class="container mt-4 carder">
+        <div class="row">
+            <div class="col-sm-6 roundcss">
+              <div class="card">
+                <div class="image" style="height:200px;overflow: hidden;">
+                    <img class="card-img-top roundcss" src="image1.jpg" alt="Card image cap" >
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Order Online</h5>
+                  <p class="card-text" style="color: rgb(105, 105, 105);">Stay online and order to your doorstep</p>
+                  
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 roundcss">
+              <div class="card rounded-top">
+                <div class="image" style="height:200px;overflow: hidden;">
+                    <img class="card-img-top roundcss"src="image2.jpg" alt="Card image cap" >
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Dining</h5>
+                  <p class="card-text" style="color: rgb(105, 105, 105);">View the city's favorite dining venues</p>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+    
+    <div class="container mt-5 carder">
+        <h1>Collections</h1>
+        <p>Explore curated lists of top restaurants, cafes, pubs, and bars in Ahmedabad, based on trends</p>
+        <div class="row mt-5">
+            <div class="col-sm-3 card-border">
+                <div class="card">
+                    <div class="card-img-top card-image ">
+                        <img src="restaurant.jpg" alt="" style="border-radius: 15px;">
+                        
+                        <h5 class="card-overlay">13 Newly Opened <span style="font-size: small;"> <br>7 Places <i class="fa-solid fa-caret-right"></i></span></h5>
+
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card">
+                    <div class="card-img-top card-image">
+                        <img src="buffet.jpg" alt="" style="border-radius: 15px;">
+                        <h5 class="card-overlay">7 Great Buffets <span style="font-size: small;"> <br>7 Places <i class="fa-solid fa-caret-right"></i></span></h5>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card">
+                    <div class="card-img-top card-image">
+                        <img src="cafe.jpg" alt=""  style="border-radius: 15px;">
+                        <h5 class="card-overlay">Top 7 Picturesque Cafe <span style="font-size: small;"> <br>7 Places <i class="fa-solid fa-caret-right"></i></span></h5>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card">
+                    <div class="card-img-top card-image">
+                        <img src="dinigplace.jpg" alt="" style="border-radius: 15px;">
+                        <h5 class="card-overlay">10 Best Luxury Dining Place <span style="font-size: small;"> <br>10 Places <i class="fa-solid fa-caret-right"></i></span></h5>
+                    </div>  
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <div class="container mt-5 location">
+        <h1>Popular localities in and around Ahmedabad</h1>
+        <div class="row mt-5">
+            <div class="col-3">
+                <h5>Bodakdev</h3>
+                <p>362 places</p>
+            </div>
+            <div class="col-1"><i class="fa-thin fa-greater-than"></i></div>
+            <div class="col-3">
+                <h5>Navrangpura</h3>
+                <p>305 places</p>
+            </div>
+            <div class="col-1"><i class="fa-thin fa-greater-than"></i></div>
+            <div class="col-3">
+                <h5>Prahlad Nagar</h3>
+                <p>192 places</p>
+            </div>
+            <div class="col-1"><i class="fa-thin fa-greater-than"></i></div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-3">
+                <h5>Satellite</h3>
+                <p>345 places</p>
+            </div>
+            <div class="col-1"><i class="fa-thin fa-greater-than"></i></div>
+            <div class="col-3">
+                <h5>Vastrapur</h3>
+                <p>222 places</p>
+            </div>
+            <div class="col-1"><i class="fa-thin fa-greater-than"></i></div>
+            <div class="col-3">
+                <h5>CG Road</h3>
+                <p>92 places</p>
+            </div>
+            <div class="col-1"><i class="fa-thin fa-greater-than"></i></div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-3">
+                <h5>Gurukul</h3>
+                <p>84 places</p>
+            </div>
+            <div class="col-1"><i class="fa-thin fa-greater-than"></i></div>
+            <div class="col-3">
+                <h5>Thaltej</h3>
+                <p>243 places</p>
+            </div>
+            <div class="col-1"><i class="fa-thin fa-greater-than"></i></div>
+            <div class="col-3">
+                <h5>Bodakdev</h3>
+                <p>362 places</p>
+            </div>
+            <div class="col-1"><i class="fa-thin fa-greater-than"></i></div>
+        </div>
+    </div>
+    <!-- get app -->
+    <div class="container get-app mt-5 mt-lg-5">
+        
+        <div class="row">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-4">
+                <div class="app-image ml-auto" style="height: 300px;width: 250px;background-image: url(https://b.zmtcdn.com/data/o2_assets/a500ffc2ab483bc6a550aa635f4e55531648107832.png) ;background-size: cover;">
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="content ml-5">
+                <h1>Get the Zomato app</h1>
+                <p>We will send you a link, open it on your phone to downlaod the app</p>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" checked>
+                    <label class="form-check-label" for="inlineRadio1">Email</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                    <label class="form-check-label" for="inlineRadio2">Phone</label>
+                  </div>
+                  <div class="form-inline mt-2">
+                    <div class="form-group">
+                        <label for="inputPassword2" class="sr-only">Email</label>
+                        <input type="email" class="form-control" id="inputPassword2" placeholder="Email">
+                      </div>
+                      <button type="submit" class="btn btn-danger ml-2">Share App Link</button>
+                  </div>
+                    <img src="playstore.png" alt="" width="120" height="60">
+                    <img src="appstore.png" alt="" width="110" height="120">
+                  
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="container explore-option mt-5 ">
+        <h2 class="">Explore options near me</h2>
+        <div id="accordion">
+          <div class="card"  data-toggle="collapse" data-target="#collapseone" aria-expanded="false" aria-controls="collapseone">
+            <div class="card-header" id="headingone">
+              <h5 class="mb-0">
+                <button class="btn collapsed" data-toggle="collapse" data-target="#collapseone" aria-expanded="false" aria-controls="collapseone">
+                  Popular cuisines near me
+                </button>
+                <i class="fa-solid fa-chevron-down float-right"></i>
+              </h5>
+            </div>
+            <div id="collapseone" class="collapse" aria-labelledby="headingone" data-parent="#accordion">
+              <div class="card-body">
+                <ul>
+                  <li>Bakery food near me</li>
+                  <li>Beverages near me</li>
+                  <li>Biryani food near me</li>
+                  <li>Cafe food near me</li>
+                </ul>  
+              </div>
+            </div>
+          </div>
+            <div class="card"  data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapsetwo">
+              <div class="card-header" id="headingTwo">
+                <h5 class="mb-0">
+                  <button class="btn collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Popular restaurant types near me
+                  </button>
+                  <i class="fa-solid fa-chevron-down float-right"></i>
+                </h5>
+              </div>
+              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                <div class="card-body">
+                  <ul>
+                    <li>Bhojnalaya near me</li>
+                    <li>Desert Palour near me</li>
+                    <li>Dhabas near me</li>
+                    <li>Food Courts near me</li>
+                  </ul>  
+                </div>
+              </div>
+            </div>
+            <div class="card"  data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                <div class="card-header" id="headingThree">
+                  <h5 class="mb-0">
+                    <button class="btn collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      Top Restaurant Chains
+                    </button>
+                    <i class="fa-solid fa-chevron-down float-right"></i>
+                  </h5>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                  <div class="card-body">
+                    <ul class="list-inline">
+                      <li class="list-inline-item mx-5">Bikanervala</li>
+                      <li class="list-inline-item mx-5">Burger King</li>
+                      <li class="list-inline-item mx-5">Burger Singh</li>
+                      <li class="list-inline-item mx-5">Dunkin' Donuts</li>
+                      <li class="list-inline-item mx-5">KFC</li>
+                    </ul>  
+                  </div>
+                </div>
+              </div>
+            <div class="card"  data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                <div class="card-header" id="headingFour">
+                  <h5 class="mb-0">
+                    <button class="btn collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                      Cities We Deliver To
+                    </button>
+                    <i class="fa-solid fa-chevron-down float-right"></i>
+                  </h5>
+                </div>
+                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+                  <div class="card-body">
+                    <div class="row ml-2">
+                      <div class="col-lg-2 ">Delhi NCR</div>
+                      <div class="col-lg-2 ">Kolkata</div>
+                      <div class="col-lg-2 ">Mumbai</div>
+                      <div class="col-lg-2 ">Bengaluru</div>
+                      <div class="col-lg-2 ">Pune</div>
+                      <div class="col-lg-2 ">Hyderabad</div>
+                    </div>
+                    <div class="row ml-2 mt-2">
+                      <div class="col-lg-2 ">Chennai</div>
+                      <div class="col-lg-2 ">Lucknow</div>
+                      <div class="col-lg-2 ">Goa</div>
+                      <div class="col-lg-2 ">Amritsar</div>
+                      <div class="col-lg-2 ">Kanpur</div>
+                      <div class="col-lg-2 ">Agra</div>
+                    </div>
+                    <div class="row ml-2 mt-2">
+                      <div class="col-lg-2 ">Surat</div>
+                      <div class="col-lg-2 ">Ahmedabad</div>
+                      <div class="col-lg-2 ">Vadodara</div>
+                      <div class="col-lg-2 ">Rajkot</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+    </div>
+    <div class="container mt-5 pb-5 mb-5">
+      <div class="row">
+      <div class="col-2">
+        <img src="logo.png" alt="" height="28">
+      </div>
+      <div class="col-10 text-right">
+          <div class="dropdown d-inline">
+        <button class="btn btn-outline-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fa fa-flag" aria-hidden="true"></i> Country
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#">India</a>
+          <a class="dropdown-item" href="#">USA</a>
+          <a class="dropdown-item" href="#">Canada</a>
+        </div>
+      </div>
+          <div class="dropdown d-inline">
+        <button class="btn btn-outline-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fa fa-globe" aria-hidden="true"></i> Language
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#">English</a>
+          <a class="dropdown-item" href="#">Spanish</a>
+          <a class="dropdown-item" href="#">Portuguese</a>
+        </div>
+      </div>
+      </div>
+      
+    </div>
+    <div class="row mt-5">
+      <div class="col-lg-2 col-sm-6">
+        <h6><b>ABOUT ZOMATO</b></h6>
+        <nav>
+          <a href=""><small>Who We Are</small></a>
+        <a href=""><small>Blog</small></a>
+        <a href=""><small>Work With Us</small></a>
+        <a href=""><small>Investor Relations</small></a>
+        <a href=""><small>Report Fraud</small></a>
+        <a href=""><small>Contact US</small></a>
+        </nav>
+      </div>
+      <div class="col-lg-2 col-sm-6">
+        <h6><b>ZOMAVERSE</b></h6>
+        <a href=""><small>Zomato</small></a>
+        <a href=""><small>Blinkit</small></a>
+        <a href=""><small>Feeding India</small></a>
+        <a href=""><small>Hyperpure</small></a>
+        <a href=""><small>Zomaland</small></a>
+      </div>
+      <div class="col-lg-3 col-sm-6">
+        <h6><b>FOR RESTAURANTS</b></h6>
+        <a href=""><small>Partner With Us</small></a>
+        <a href=""><small>Apps For You</small></a><br>
+
+        <h6><b>FOR ENTERPRISES</b></h6>
+        <a href=""><small>Zomato For Work</small></a>
+
+      </div>
+      <div class="col-lg-2 col-sm-6">
+        <h6><b>LEARN MORE</b></h6>
+        <a href=""><small>Privacy</small></a>
+        <a href=""><small>Security</small></a>
+        <a href=""><small>Terms</small></a>
+        <a href=""><small>Sitemap</small></a>
+      </div>
+      <div class="col-lg-2 text-center">
+        <h6 class="text-center"><b>SOCIAL LINKS</b></h6>
+        <div class="socials d-flex justify-content-around mt-3">
+        <i class="fa fa-linkedin-square " aria-hidden="true"></i>
+        <i class="fa fa-instagram-square" aria-hidden="true"></i>
+        <i class="fa fa-twitter-square" aria-hidden="true"></i>
+        <i class="fa fa-youtube-square" aria-hidden="true"></i>
+        <i class="fa fa-facebook-square" aria-hidden="true"></i>
+        
+        </div>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ13GneQ1vU9Iko-sTrfXH28X2DrBLW10noLSglC1RHlg&s" alt="" width="150" height="100" class="mt-2">
+      </div>
+      <hr class="my-4 border-0">
+      </div>
+    </div>
+    
+    <div class="container" style="border-top: 1px solid black; padding-top: 20px;">
+      <p style="font-size: 15px;">By continuing past this page, you agree to our Terms of Service, Cookie Policy, Privacy Policy and Content Policies. All trademarks are properties of their respective owners. 2008-2023 © Zomato™ Ltd. All rights reserved.</p>
+   
+    </div>
+ </body>
+</html>
