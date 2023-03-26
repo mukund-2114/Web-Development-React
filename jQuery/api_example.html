@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <script src="http://localhost:1337/json/allstops.json"></script>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <style>
+            img{
+                width: 18rem;
+                height: 18rem;
+            }
+            span{
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div class="container">
+            <div class="text-center mx-auto mt-5">
+                <button type="" class="btn btn-primary" name="jewelery" onclick=getData(this)>Jewelery</button>
+                <button type="" class="btn btn-secondary" name="electronics" onclick=getData(this)>Electronics</button>
+                <button type="" class="btn btn-success" name="men's clothing" onclick=getData(this)>Men's Clothing</button>
+                <button type="" class="btn btn-warning" name="women's clothing" onclick=getData(this)>Women's Clothing</button>
+            </div>
+            <div class="row mt-5">
+                <!-- <div class="col-4">
+                    <div class="card" style="width: 18rem;">
+                        
+                            <img class="card-img-top" src="https://cdn.discordapp.com/attachments/1008571042782003290/1084844424795799552/SpacePanda83_cartoon_style_panda_anime_with_galaxy_fur_in_pink__f54af37f-2f74-4b56-a250-755181cc4275.png" alt="">
+                        
+                        <div class="card-body">
+                            <h4 class="card-title">Card 1</h4>
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam iusto aliquid quidem voluptatum minima hic.</p>
+                        </div>
+                    </div>
+                </div> -->
+                
+            </div>
+        </div>
+        
+        <script type="text/javascript">
+            
+            // var apiarray = ["https://fakestoreapi.com/products","https://fakestoreapi.com/products/category/jewelery","https://fakestoreapi.com/products/category/electronics"];
+           
+            var url = "https://fakestoreapi.com/products/categories";
+
+            function getData(element){
+                $(".row").empty();
+               var item = element.getAttribute('name');
+                console.log(item);
+                // console.log(typeof(item))
+               var newurl = "https://fakestoreapi.com/products/category/"+item;
+                
+            console.log(newurl);
+            $.ajax({
+                url: newurl,
+                dataType: 'json',
+                success: function(data) {
+                    // console.log(data)
+                    for (var i = 0; i < data.length; i++) {
+                                var details = data[i];
+                                var card = "<div class='col-4'><div class='card mt-4' style='width: 18rem;'><img class='card-img-top' src='"+details.image+"' alt='><div class='card-body'><h4 class='card-title'>"+details.title+"</h4><h5 class='card-subtitle'>"+details.price+"$    <span>"+details.category+"</span>"+"</h5><p class='card-text'>"+details.description+"</p></div></div></div>";
+                                    $(".row").append(card);
+                                }
+                    // console.log(data);
+                    // for (var i = 0; i < data.length; i++) {
+                    //    console.log(data[i]);
+                       for (var j = 0; j < data.length; j++) {
+                                console.log(newurl);
+                        //     $.ajax({
+                        //     url: newurl,
+                        //     dataType: 'json',
+                        //     success: function(data) {
+                        //         // console.log(data);
+                        //         for (var i = 0; i < data.length; i++) {
+                        //         var details = data[i];
+                        //         var card = "<div class='col-4'><div class='card mt-4' style='width: 18rem;'><img class='card-img-top' src='"+details.image+"' alt='><div class='card-body'><h4 class='card-title'>"+details.title+"</h4><h5 class='card-subtitle'>"+details.price+"$    <span>"+details.category+"</span>"+"</h5><p class='card-text'>"+details.description+"</p></div></div></div>";
+                        //             $(".row").append(card);
+                        //         }
+                            
+                        //     },
+                            
+                        // });
+
+                       }
+                    // }
+                
+                },
+                
+            });
+        }
+
+            // for (var j = 0; j < 3; j++){
+            //     console.log(apiarray[j]);
+            //     $.ajax({
+            //     url: apiarray[j],
+            //     dataType: 'json',
+            //     success: function(data) {
+            //         // console.log(data);
+            //         for (var i = 0; i < data.length; i++) {
+            //            var details = data[i];
+            //            var card = "<div class='col-4'><div class='card mt-4' style='width: 18rem;'><img class='card-img-top' src='"+details.image+"' alt='><div class='card-body'><h4 class='card-title'>"+details.title+"</h4><h5 class='card-subtitle'>"+details.price+"$    <span>"+details.category+"</span>"+"</h5><p class='card-text'>"+details.description+"</p></div></div></div>";
+            //             $(".row").append(card);
+            //         }
+                
+            //     },
+                
+            // });
+            // }
+
+            
+        </script>
+    </body>
+</html>

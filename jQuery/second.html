@@ -1,0 +1,249 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        .imagediv {
+          height: 400px;
+          width: 400px;
+        }
+      </style>
+      <script>
+        // var qui = 0;
+        // $(document).ready(function () {
+        // $(".img1").click(function(){
+        //   $(".imgmain").attr("src","./image/img1.jpg")
+        // })
+        // $(".img2").click(function(){
+        //   $(".imgmain").attr("src","./image/img2.jpg")
+        // })
+        // $(".img3").click(function(){
+        //   $(".imgmain").attr("src","./image/img3.jpg")
+        // })
+        // $(".img4").click(function(){
+        //   $(".imgmain").attr("src","./image/img4.jpg")
+        // })
+        // $(".imgmain").mouseenter(function(){
+        //   $(".imgmain").attr("src","./image/11 (1).jpg")
+        // })
+  
+        // count = 0;
+  
+        // $("button").click(function(){
+        //   count+=1
+        //   // alert(count)
+        // var name=$(".name").val();
+        // var email=$(".email").val();
+        // var password=$(".password").val();
+        // var html ="";
+        // html += "<tr>";
+        // html += "<td>"+count+"</td>";
+        // html += "<td>"+name+"</td>";
+        // html += "<td>"+email+"</td>";
+        // html += "<td>"+password+"</td>";
+        // html += "<td><button class='btn btn-info btn-sm demo'>View</button></td>";
+        // html += "</tr>";
+        // // var html ="<tr><td>"+name+"</td><td>"+email+"</td><td>"+password+"</td></tr>";
+        // $(".tabledata").append(html);
+        // // $(".name").val("");
+        // // $(".email").val("");
+        // // $(".password").val("");
+        // })
+  
+        // $(".name").keyup(function(){
+        //   var a=$(".name").val()
+        //   $(".data").text(a)
+        // })
+  
+        // $("p").click(function(){
+        //   $(this).css("color","green");
+        // })
+        // $(".pos").click(function () {
+        //   qui = qui + 1;
+        //   $(".qui").val(qui);
+        // });
+        // $(".neg").click(function () {
+        //   if (qui == 0) {
+        //     $(".qui").val(qui);
+        //   } else {
+        //     qui = qui - 1;
+        //     $(".qui").val(qui);
+        //   }
+        // });
+        // $(".save").click(function () {
+        //   alert($(".qui").val());
+        // });
+        // });
+        
+        // $("form [name='reg']").validate({
+        //   rules: {
+        //     name: "required",
+        //     email: { required: true },
+        //     password: { required: true },
+        //   },
+        //   messages: {
+        //     name: "Pleace Enter Your Name",
+        //     email: "Pleace Enter Your Email",
+        //     password: "Pleace Enter Your Password",
+        //   },
+        //   submitHandler: function (form) {
+        //     alert("valid form");
+        //     return false;
+        //   },
+        // });
+      </script>
+    </head>
+    <body>
+      <div class="container mt-2">
+        <!-- <div class="imagediv">
+          <img src="./image/img1.jpg" class="imgmain" height="100%" width="100%"/>
+        </div>
+        <div class="mt-5">
+          <img src="./image/img1.jpg" class="img1" height="100px" width="100px"/>
+          <img src="./image/img2.jpg" class="img2" height="100px" width="100px"/>
+          <img src="./image/img3.jpg" class="img3" height="100px" width="100px"/>
+          <img src="./image/img4.jpg" class="img4" height="100px" width="100px"/>
+        </div> 
+        <div>
+          <blockquote class="mt-5 data"></blockquote>
+        </div> -->
+  
+        <form name="registration" id="reg">
+          <input
+            type="text"
+            placeholder="Enter Your Name"
+            name="name"
+            class="name col-6 form-control mt-2" />
+          <input
+            type="email"
+            placeholder="Enter Your Email"
+            name="email"
+            class="email col-6 form-control mt-2" />
+          <input
+            type="password"
+            placeholder="Enter Your Password"
+            name="password"
+            class="password col-6 form-control mt-2" />
+          <button class="btn btn-outline-success mt-5">Save</button>
+        </form>
+  
+        <div class="mt-5">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Button</th>
+              </tr>
+            </thead>
+            <tbody class="tabledata"></tbody>
+          </table>
+        </div>
+        <!-- 
+        <button class="btn pos">+</button>
+        <input class="col-1 form-control qui" type="text" value="0" readonly />
+        <button class="btn neg">-</button>
+  
+        <br />
+        <br />
+        <br />
+        <button class="btn save">save</button> -->
+  
+        <!-- <p>hello Everyone1</p>
+        <p>hello Everyone2</p>
+        <p>hello Everyone3</p>
+        <p>hello Everyone4</p>
+        <p>hello Everyone5</p> -->
+      </div>
+      <script>
+        $("form[name='registration']").validate({
+          rules: {
+            name: {
+              required: true,
+              lettersonly: true,
+              minlength: 3,
+            },
+            email: {
+              required: true,
+              email: true,
+            },
+            password: {
+              required: true,
+              minlength: 8,
+              pattern: /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[a-zA-Z0-9]{8,}$/,
+            },
+          },
+          messages: {
+            name: "Please enter your name",
+            password: {
+              required: "Please provide a password",
+              minlength: "Your password must be at least 8 characters long",
+              pattern:
+                "your password must contain upper- and lower-case characters and at least one number ",
+            },
+            email: "Please enter a valid email address",
+          },
+          submitHandler: function (form, e) {
+            e.preventDefault();
+  
+            alert("valid form");
+          },
+        });
+      </script>
+    <!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+    
+  </html>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <!-- Code inject

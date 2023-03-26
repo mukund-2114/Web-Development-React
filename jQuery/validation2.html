@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Jquery Session</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="bootstrap.min.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
+      integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/additional-methods.min.js"></script>
+    <style>
+      .error{
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="mt-5 container">
+      <div class="col-6">
+        <form name="loginform">
+          <div class="form-group">
+            <label>Email <span class="error">*</span></label>
+            <input
+              type="email"
+              placeholder="Enter Email"
+              name="email"
+              class="form-control email" />
+          </div>
+          <div class="form-group">
+            <label>Password <span class="error">*</span></label>
+            <input
+              type="password"
+              placeholder="Enter Password"
+              name="pass"
+              class="form-control password" />
+          </div>
+          <button class="btn btn-success btn-sm">Save</button>
+        </form>
+      </div>
+    </div>
+    <script>
+      $(document).ready(function () {
+        $("form[name='loginform']").validate({
+          rules: {
+            email: "required",
+            pass: {
+              required: true,
+              minlength: 8,
+              pattern: /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[a-zA-Z0-9]{8,}$/,
+            },
+          },
+          messages: {
+            email: "Enter Your Email",
+            pass: {
+              required: "Please provide a password",
+              minlength: "Your password must be at least 8 characters long",
+              pattern:
+                "your password must contain upper-case and lower-case characters and at least one number ",
+            },
+          },
+          submitHandler: function (form, e) {
+            e.preventDefault();
+            
+          },
+        });
+      });
+    </script>
+  </body>
+</html>

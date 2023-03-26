@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.min.js"
+      integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery-json/2.6.0/jquery.json.min.js"
+      integrity="sha512-QE2PMnVCunVgNeqNsmX6XX8mhHW+OnEhUhAWxlZT0o6GFBJfGRCfJ/Ut3HGnVKAxt8cArm7sEqhq2QdSF0R7VQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+      $.ajax({
+        url: "https://api.covid19api.com/summary",
+        dataType: "json",
+        success: function (data) {
+          countries = data["Countries"];      
+          for (var i = 0; i < countries.length; i++) {
+            
+            detail = countries[i];
+
+            var row =
+              "<tr><td>" +
+                i +
+                "</td><td>" +
+                detail['Country'] +
+                "</td><td>" +
+                detail['CountryCode'] +
+                "</td><td>" +
+                detail['Slug'] +
+                "</td><td>" +
+                detail['NewConfirmed'] +
+                "</td><td>" +
+                detail['TotalConfirmed'] +
+                "</td><td>" +
+                detail['NewDeaths'] +
+                "</td><td>" +
+                detail['TotalDeaths'] +
+                "</td><td>" +
+                detail['NewRecovered'] +
+                "</td></tr>";
+    
+            $("#data").append(row);
+          }
+        },
+      });
+    </script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <table class="table text-center table-striped table-bordered" style="background-color:rgb(235, 218, 34)">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Country</th>
+            <th>Country Code</th>
+            <th>Slug</th>
+            <th>New Confirmed</th>
+            <th>Total Confirmed</th>
+            <th>New Deaths</th>
+            <th>Total Deaths</th>
+            <th>New Recovered</th>
+          </tr>
+        </thead>
+        <tbody id="data">
+          
+        </tbody>
+      </table>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

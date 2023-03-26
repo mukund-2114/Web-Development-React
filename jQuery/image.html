@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script>
+        $(document).ready(function(){
+            $(".img1").hover(function(){
+                $(".img").attr("src","https://picsum.photos/id/117/800/600");
+            });
+            $(".img2").hover(function(){
+                $(".img").attr("src","https://picsum.photos/id/127/800/600");
+            });
+            $(".img3").hover(function(){
+                $(".img").attr("src","https://picsum.photos/id/147/800/600");
+            });
+            $(".img4").hover(function(){
+                $(".img").attr("src","https://picsum.photos/id/157/800/600");
+            });
+            
+        });
+    </script>
+</head>
+  <body>
+      
+    <div class="container">
+        <div class="main-image mt-5 text-center">
+            <img src="https://picsum.photos/id/134/800/600" alt="" class="img">
+        </div>
+        <div class="image-div mt-1 text-center">
+            <img src="https://picsum.photos/id/117/200/200" alt="" class="img1">
+            <img src="https://picsum.photos/id/127/200/200" alt="" class="img2">
+            <img src="https://picsum.photos/id/147/200/200" alt="" class="img3">
+            <img src="https://picsum.photos/id/157/200/200" alt="" class="img4">
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

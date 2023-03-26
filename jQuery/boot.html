@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/additional-methods.min.js"></script>
+
+    <style>
+      .imagediv {
+        height: 400px;
+        width: 400px;
+      }
+    </style>
+    <script>
+      var qui = 0;
+      $(document).ready(function () {
+      // $(".img1").click(function(){
+      //   $(".imgmain").attr("src","https://picsum.photos/100/100")
+      // })
+      // $(".img2").click(function(){
+      //   $(".imgmain").attr("src","https://picsum.photos/100/200")
+      // })
+      // $(".img3").click(function(){
+      //   $(".imgmain").attr("src","https://picsum.photos/200/100")
+      // })
+      // $(".img4").click(function(){
+      //   $(".imgmain").attr("src","https://picsum.photos/200/200")
+      // })
+      // $(".imgmain").mouseenter(function(){
+      //   $(".imgmain").attr("src","https://picsum.photos/900/900")
+      // })
+
+      count = 0;
+
+      $("button").click(function(){
+        count+=1
+        // alert(count)
+      var name=$(".name").val();
+      var email=$(".email").val();
+      var password=$(".password").val();
+      var html ="";
+      html += "<tr>";
+      html += "<td>"+count+"</td>";
+      html += "<td>"+name+"</td>";
+      html += "<td>"+email+"</td>";
+      html += "<td>"+password+"</td>";
+      html += "<td><button class='btn btn-info btn-sm demo'>View</button></td>";
+      html += "</tr>";
+      var html ="<tr><td>"+name+"</td><td>"+email+"</td><td>"+password+"</td></tr>";
+      $(".tabledata").append(html);
+      $(".name").val("");
+      $(".email").val("");
+      $(".password").val("");
+      })
+
+      $(".name").keyup(function(){
+        var a=$(".name").val()
+        $(".data").text(a)
+      })
+
+      $("p").click(function(){
+        $(this).css("color","green");
+      })
+      $(".pos").click(function () {
+        qui = qui + 1;
+        $(".qui").val(qui);
+      });
+      $(".neg").click(function () {
+        if (qui == 0) {
+          $(".qui").val(qui);
+        } else {
+          qui = qui - 1;
+          $(".qui").val(qui);
+        }
+      });
+      $(".save").click(function () {
+        alert($(".qui").val());
+      });
+      });
+      
+      $("form [name='reg']").validate({
+        rules: {
+          name: "required",
+          email: { required: true },
+          password: { required: true },
+        },
+        messages: {
+          name: "Pleace Enter Your Name",
+          email: "Pleace Enter Your Email",
+          password: "Pleace Enter Your Password",
+        },
+        submitHandler: function (form) {
+          alert("valid form");
+          return false;
+        },
+      });
+    </script>
+  </head>
+  <body>
+    <div class="container mt-2">
+      <!-- <div class="imagediv">
+        <img src="https://picsum.photos/500/500" class="imgmain" height="100%" width="100%"/>
+      </div>
+      <div class="mt-5">
+        <img src="https://picsum.photos/100/100" class="img1" height="100px" width="100px"/>
+        <img src="https://picsum.photos/100/200" class="img2" height="100px" width="100px"/>
+        <img src="https://picsum.photos/200/100" class="img3" height="100px" width="100px"/>
+        <img src="https://picsum.photos/200/200" class="img4" height="100px" width="100px"/>
+      </div>  -->
+      <!-- <div>
+        <blockquote class="mt-5 data"></blockquote>
+      </div> -->
+
+      <form name="registration" id="reg">
+        <input
+          type="text"
+          placeholder="Enter Your Name"
+          name="name"
+          class="name col-6 form-control mt-2" />
+        <input
+          type="email"
+          placeholder="Enter Your Email"
+          name="email"
+          class="email col-6 form-control mt-2" />
+        <input
+          type="password"
+          placeholder="Enter Your Password"
+          name="password"
+          class="password col-6 form-control mt-2" />
+        <button class="btn btn-outline-success mt-5">Save</button>
+      </form>
+
+      <div class="mt-5">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Password</th>
+              <th>Button</th>
+            </tr>
+          </thead>
+          <tbody class="tabledata"></tbody>
+        </table>
+      </div>
+      
+      <button class="btn pos">+</button>
+      <input class="col-1 form-control qui" type="text" value="0" readonly />
+      <button class="btn neg">-</button>
+
+      <br />
+      <br />
+      <br />
+      <button class="btn save">save</button>
+
+      <p>hello Everyone1</p>
+      <p>hello Everyone2</p>
+      <p>hello Everyone3</p>
+      <p>hello Everyone4</p>
+      <p>hello Everyone5</p>
+    </div>
+    <script>
+      $("form[name='registration']").validate({
+        rules: {
+          name: {
+            required: true,
+            lettersonly: true,
+            minlength: 3,
+          },
+          email: {
+            required: true,
+            email: true,
+          },
+          password: {
+            required: true,
+            minlength: 8,
+            pattern: /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[a-zA-Z0-9]{8,}$/,
+          },
+        },
+        messages: {
+          name: "Please enter your name",
+          password: {
+            required: "Please provide a password",
+            minlength: "Your password must be at least 8 characters long",
+            pattern:
+              "your password must contain upper- and lower-case characters and at least one number ",
+          },
+          email: "Please enter a valid email address",
+        },
+        submitHandler: function (form, e) {
+          e.preventDefault();
+
+          alert("valid form");
+        },
+      });
+    </script>
+  </body>
+  
+</html>
